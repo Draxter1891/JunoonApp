@@ -49,8 +49,8 @@ export default AppNavigator;
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#FCE4EC',
-    elevation: 0,
-    shadowOpacity: 0,
+    elevation: 3,
+    shadowOpacity: 1,
     height: 70,
   },
   headerTitle: {
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   logo: {
-    width: 90,
-    height: 40,
+    width: 70,
+    height: 70,
     marginRight: 15,
   },
   drawer: {
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   },
   drawerItem: {
     borderRadius: 30,
-    marginVertical: 10,
     paddingHorizontal: 10,
   },
   drawerLabel: {

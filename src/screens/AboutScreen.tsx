@@ -52,7 +52,7 @@ export default AboutScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FCE4EC',
+    backgroundColor: '#f0e5e6ff',
     paddingHorizontal: 24,
     paddingTop: 20,
   },
