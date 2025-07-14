@@ -6,93 +6,135 @@ import {
   StyleSheet,
   Linking,
   ScrollView,
+  Image,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import PolicyButton from '../components/PolicyBtn';
 
-const openLink = (url: string) => {
-  Linking.openURL(url);
-};
 
-const  AboutScreen = ()=> {
+
+const AboutScreen = () => {
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
-        <Text style={styles.heading}>Legal & Policies</Text>
+    <ScrollView
+      contentContainerStyle={styles.scrollContainer}
+      showsVerticalScrollIndicator={false}
+    >
+       <Image
+        source={{
+          uri: 'https://drive.google.com/uc?export=view&id=1xEYKVGCyg2ayL0rcr0cLadoMO5POwF6V',
+        }}
+        style={styles.img}
+        resizeMode="cover"
+      />
+      <Text style={styles.sectionTitle}>Why Junoon Capital?</Text>
 
-        <PolicyButton title="Privacy Policy (PDF)" url="https://drive.google.com/file/d/1B3BlKlnJM1rIqYjjwNX-mMx2egCE1V11/view?usp=sharing" />
-        <PolicyButton title="Refund Policy (PDF)" url="https://drive.google.com/file/d/1UXTs-NfJZx8O0b3HELDvB2YzAIBRH7Wj/view?usp=sharing" />
-        <PolicyButton title="Terms & Conditions (PDF)" url="https://drive.google.com/file/d/1XCKWLd1KleCxozCsbVKt-IQqC1GVHQr-/view?usp=sharing" />
-        <PolicyButton title="Account Aggregator Terms (PDF)" url="https://drive.google.com/file/d/194fwEKh-YHWXypTCWimcH9z8IhG5K8w8/view?usp=sharing" />
-        <PolicyButton title="Account Aggregator Policy (PDF)" url="https://drive.google.com/file/d/18UKDKIpCgu_Mxg4jdiq1Wwvc1FXdmoch/view?usp=sharing" />
-      </ScrollView>
+      <View style={styles.pointRow}>
+        <Icon name="checkmark-circle-outline" size={20} color="#7E1900" />
+        <Text style={styles.pointText}>
+          Junoon Capital Services Pvt. Ltd is an RBI Registered NBFC in SME lending. We deliver finance to small business owners to drive growth.
+          {'\n\n'}CIN: U74899DL1996PTC080511
+          {'\n'}RBI Regd. No.: B-14.01812
+        </Text>
+      </View>
+
+      <View style={styles.pointRow}>
+        <Icon name="checkmark-circle-outline" size={20} color="#7E1900" />
+        <Text style={styles.pointText}>
+          Our hassle-free loans are driven by technology revolutions and enhance the digital payments ecosystem.
+        </Text>
+      </View>
+
+      
+      <Text style={styles.heading}>Board of Directors</Text>
+
+      <Text style={styles.directorName}>Mr. Ashish Kumar Dwivedi</Text>
+      <Text style={styles.pointText}>
+        18+ years in IT industry. B.Sc.(IT), MCA, Post-Graduate in AI & Data Science (IIIT Delhi). Microsoft Certified (MCSA, MCSD). Worked on projects with Bank of America, DLF, Asian Paints, and Nestle. Expert in blending technical and marketing leadership.
+      </Text>
+
+      <Text style={styles.directorName}>Mr. Prabhat Dwivedi</Text>
+      <Text style={styles.pointText}>
+        11+ years experience in Business Operations, Strategy, and Training. Previously worked with NGOs, Satin Credit Care, and Axis Bank in Rural Retail Lending. MBA in Rural Development. Passionate about rural finance and development.
+      </Text>
+
+    
+      <Text style={[styles.heading,{marginBottom:20}]}>Legal & Policies</Text>
+
+      <PolicyButton title="Privacy Policy" url="https://drive.google.com/file/d/1B3BlKlnJM1rIqYjjwNX-mMx2egCE1V11/view?usp=sharing" />
+      <PolicyButton title="Refund Policy" url="https://drive.google.com/file/d/1UXTs-NfJZx8O0b3HELDvB2YzAIBRH7Wj/view?usp=sharing" />
+      <PolicyButton title="Terms & Conditions" url="https://drive.google.com/file/d/1XCKWLd1KleCxozCsbVKt-IQqC1GVHQr-/view?usp=sharing" />
+      <PolicyButton title="Account Aggregator Terms" url="https://drive.google.com/file/d/194fwEKh-YHWXypTCWimcH9z8IhG5K8w8/view?usp=sharing" />
+      <PolicyButton title="Account Aggregator Policy" url="https://drive.google.com/file/d/18UKDKIpCgu_Mxg4jdiq1Wwvc1FXdmoch/view?usp=sharing" />
 
       <View style={styles.footer}>
         <Text style={styles.footerText}>
-          © 2025 Junoon Capital Services Pvt Ltd. {'\n'}
+          © 2025 Junoon Capital Services Pvt Ltd.
           All Rights Reserved.
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
-}
-
-const PolicyButton = ({ title, url }: { title: string; url: string }) => {
-  return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={() => openLink(url)}
-      activeOpacity={0.7}
-    >
-      <Text style={styles.buttonText}>{title}</Text>
-    </TouchableOpacity>
-  );
-}
+};
 
 export default AboutScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0e5e6ff',
-    paddingHorizontal: 24,
-    paddingTop: 20,
-  },
   scrollContainer: {
-    paddingBottom: 20,
+    flexGrow: 1,
+    padding: 20,
+    backgroundColor: '#f0e5e6',
+    alignItems: 'center',
+  },
+  img: {
+    width: '100%',
+    height: 200,
+    marginBottom: 12,
+    borderRadius: 10,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: 'navy',
+    marginVertical: 20,
+    alignSelf: 'flex-start',
   },
   heading: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#7E1900', 
-    marginBottom: 30,
-    textAlign: 'center',
+    color: '#7E1900',
+    marginVertical: 20,
+    width: '100%',
+    alignSelf:'flex-start'
   },
-  button: {
+  pointRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 8,
     marginBottom: 16,
-    backgroundColor: '#7E1900',
-    paddingVertical: 14,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
+    width: '100%',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 15,
-    textAlign: 'center',
-    fontWeight: '500',
-    letterSpacing: 0.5,
+  pointText: {
+    flex: 1,
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#333',
   },
+  directorName: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: 'navy',
+    alignSelf: 'flex-start',
+    marginTop: 16,
+    marginBottom: 4,
+  },
+  
   footer: {
-    paddingVertical: 16,
-    alignItems: 'center',
+    marginTop: 20,
+    width: '100%',
     borderTopWidth: 0.5,
-    borderColor: '#E0E0E0',
+    borderColor: '#ddd',
+    paddingVertical: 12,
+    alignItems: 'center',
   },
-  footerText: {
-    fontSize: 12,
-    color: '#999',
-    textAlign: 'center',
-  },
+  footerText: { fontSize: 12, color: '#999', textAlign: 'center' },
 });

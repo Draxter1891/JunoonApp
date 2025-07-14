@@ -5,6 +5,9 @@ import { Image, StyleSheet, Dimensions } from 'react-native';
 
 import Home from './screens/Home';
 import AboutScreen from './screens/AboutScreen';
+import Partners from './screens/Partners';
+import GrievanceRedressal from './screens/Grievance';
+import ContactScreen from './screens/ContactScreen';
 
 const { width } = Dimensions.get('window');
 const Drawer = createDrawerNavigator();
@@ -39,6 +42,9 @@ const AppNavigator = () => {
       >
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="About" component={AboutScreen} />
+        <Drawer.Screen name="Partners" component={Partners} />
+        <Drawer.Screen name="Grievance" component={GrievanceRedressal} />
+        <Drawer.Screen name="Contact" component={ContactScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
