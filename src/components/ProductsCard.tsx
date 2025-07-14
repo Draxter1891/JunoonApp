@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 import React, { FC } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -6,26 +12,30 @@ type Props = {
   name: string;
   heading: string;
   content: string;
+  link: string;
 };
 
-const ProductsCard: FC<Props> = ({ name, heading, content }) => {
+const ProductsCard: FC<Props> = ({ name, heading, content, link }) => {
+  const handlePress = (link: string) => {
+    Linking.openURL(link);
+  };
   return (
-    <View style={styles.container}>
-      <Icon name={name} size={100} />
-      <View>
-        <Text style={styles.heading}>{heading}</Text>
-        <Text style={styles.content}>{content}</Text>
+    <TouchableHighlight onPress={() => handlePress(link)}>
+      <View style={styles.container}>
+        <Icon name={name} size={100} />
+        <View>
+          <Text style={styles.heading}>{heading}</Text>
+          <Text style={styles.content}>{content}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 
 export default ProductsCard;
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-  },
+  container: { flexDirection: 'row', alignItems: 'center' },
   heading: {
     fontWeight: 'bold',
   },
