@@ -6,8 +6,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const { width, height } = Dimensions.get('window');
 
 const INITIAL_REGION = {
-  latitude: 28.580001,
-  longitude: 77.329999,
+  latitude: 28.600679,
+  longitude: 77.030179,
   latitudeDelta: 0.01,
   longitudeDelta: 0.01,
 };
