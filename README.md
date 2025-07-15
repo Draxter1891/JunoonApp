@@ -1,97 +1,124 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Junoon Capital - Mobile App 📱
 
-# Getting Started
+*(React Native - Android Build)*
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+![App Logo](https://drive.google.com/uc?export=view&id=1Je3K7Uil2T_hHLlKzNEKeYJgPNS71_xy
+)
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 🚀 Overview
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Junoon Capital App is a **financial solutions platform** offering streamlined access to services like **Digital Loans, Microfinance Loans, Secured & Unsecured Business Loans.**
+Designed with simplicity and trust, this app enhances customer experience with a clean, professional UI and smooth performance, fully aligned with **Junoon Capital's website aesthetics.**
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+### 🛠️ Built With
+
+* **React Native CLI**
+* **TypeScript**
+* **React Navigation / Drawer**
+* **Android Studio** (Build & Testing)
+
+---
+
+### 📂 App Structure
+
+```
+JunoonCapitalApp/
+│
+├── assets/
+│   └── images/
+│
+├── src/
+│   ├── components/        # Reusable UI Components
+│   ├── constants/         # Static Data (images, links)
+│   ├── navigation/        # App Navigation Setup
+│   ├── screens/           # Core Screens (Home, Contact, Digital Loan etc.)
+│   ├── context/           # Context API for State Sharing
+│   └── AppNavigator.tsx   # Drawer Navigation
+│
+├── App.tsx                 # Entry Point
+├── package.json
+├── android/                # Android Build Directory
+└── README.md
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### ✨ Key Features
 
-### Android
+✅ Clean, Modern UI
+✅ Easy Navigation via Drawer
+✅ All Loan Options Well Structured
+✅ Google Drive Images Optimized
+✅ Lightweight Splash Screen with Animation
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
+### 📸 Screens in App
+
+| Screen                | Purpose                          |
+| --------------------- | -------------------------------- |
+| **Home**              | Overview, CTA Navigation         |
+| **Contact Us**        | Reach Us, Email, Map Integration |
+| **Digital Loan**      | Digital Loan Details & Apply     |
+| **Microfinance Loan** | Microfinance Details             |
+| **Unsecured Loan**    | Business Unsecured Loan          |
+| **Secured Loan**      | Business Secured Loan            |
+| **Splash Screen**     | Branded Smooth Animation         |
+
+---
+
+### 📲 How to Run Locally (Android Only)
+
+```bash
+# Clone this repo
+git clone https://github.com/YOUR_GITHUB/JunoonCapitalApp.git
+
+# Install dependencies
+npm install
+
+# Android Setup
+cd android
+./gradlew clean
+cd ..
+
+# Start Metro
+npx react-native start
+
+# Run on Android
+npx react-native run-android
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### 📀 Type Safety (Example)
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```ts
+export type imageData = {
+    imgUri: string;
+};
+export const imageData: imageData[] = [
+    { imgUri: 'https://drive.google.com/uc?export=view&id=...' }
+];
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+### Testable APK
+📱 **[Junoon.apk](https://drive.google.com/file/d/1vPmHSiWOqhBI6aqk8Vu_w2NlxTX5s7Bs/view?usp=sharing)**
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+* Also you can download the app from /apk/googleDriveLink.txt
+---
+### 📞 Contact
 
-```sh
-# Using npm
-npm run ios
+📧 **[info@junooncapital.com](mailto:info@junooncapital.com)**
+📱 **+91 9311 343 335**
 
-# OR using Yarn
-yarn ios
-```
+---
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### © 2025 Junoon Capital Services Pvt Ltd.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+*All rights reserved.*
