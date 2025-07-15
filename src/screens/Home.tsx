@@ -7,10 +7,9 @@ import {
 } from 'react-native';
 import React from 'react';
 import CustomCarousel from '../components/CustomCarousel';
-import Icon from 'react-native-vector-icons/Ionicons';
-import ProductsCard from '../components/ProductsCard';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const Home = () => {
+const Home = ({navigation}:any) => {
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: '#f0e5e6ff' }}
@@ -83,30 +82,10 @@ const Home = () => {
       </View>
 
       <View style={styles.card}>
-        <ProductsCard
-          link="https://www.junooncapital.com/digital_loan"
-          name="cash"
-          heading="Digital Loan"
-          content="In today’s modern financial market, borrowers expect convenience and speed. At Junoon Capital Services Pvt. Ltd."
-        />
-        <ProductsCard
-          link="https://www.junooncapital.com/digital_loan"
-          name="search"
-          heading="Microfinance Loan"
-          content="Microfinance customers are typically under / unbanked individuals or groups who do not have access to traditional financial resources."
-        />
-        <ProductsCard
-          link="https://www.junooncapital.com/digital_loan"
-          name="business"
-          heading="Unsecured Business Loan"
-          content="Upgrade your business and take it to new-fangled heights with a capital infusion from Junoon Capital Services Pvt. Ltd. fast unsecured Business Loans."
-        />
-        <ProductsCard
-          link="https://www.junooncapital.com/digital_loan"
-          name="briefcase"
-          heading="Secured Business Loan"
-          content="We offer offline as well as online Business Loan in India for the Micro enterprise sector and have designed our offering to match your unique needs."
-        />
+        <TouchableOpacity onPress={()=>navigation.navigate('Products')} style={{flexDirection:'row',alignItems:'center',justifyContent:'flex-start'}}>
+          <Icon name='account-balance' size={40} color={'#e64067'}/>
+          <Text style={{fontSize:20,fontWeight:'bold',marginLeft:20,color:'#7E1900'}}>Go to Our Products</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.footer}>

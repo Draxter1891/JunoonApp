@@ -1,16 +1,14 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { PolicyButton } from './AboutScreen'; // reuse from previous
 
 const GrievanceRedressal = () => {
-  const openUrl = (url: string) => Linking.openURL(url);
 
   return (
     <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
       <Text style={styles.title}>Grievance Redressal</Text>
 
-      {/* Objective */}
+      
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Objective</Text>
         <Text style={styles.text}>
@@ -24,7 +22,7 @@ const GrievanceRedressal = () => {
         </View>
       </View>
 
-      {/* Definition */}
+      
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Complaint Defined As</Text>
         <Text style={styles.text}>
@@ -41,7 +39,7 @@ const GrievanceRedressal = () => {
         </Text>
       </View>
 
-      {/* Procedure */}
+    
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>How to File a Complaint</Text>
         <View style={styles.list}>
@@ -53,7 +51,7 @@ const GrievanceRedressal = () => {
         </Text>
       </View>
 
-      {/* Complaint Details */}
+    
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Provide in Your Complaint</Text>
         <View style={styles.list}>
@@ -63,7 +61,7 @@ const GrievanceRedressal = () => {
         </View>
       </View>
 
-      {/* Handling */}
+      
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Complaint Handling</Text>
         <View style={styles.list}>
@@ -76,7 +74,7 @@ const GrievanceRedressal = () => {
           Closed complaints are archived and can be re-examined if required.
         </Text>
 
-        {/* TAT Table */}
+        
         <View style={styles.table}>
           {[
             { type: 'Payment Updation', tat: '1–2 working days', email: 'payments@junooncapital.com' },
@@ -94,7 +92,7 @@ const GrievanceRedressal = () => {
         </View>
       </View>
 
-      {/* Escalation */}
+      
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Escalation Process</Text>
         <Text style={styles.bold}>Level 1 – Grievance Redressal Officer</Text>

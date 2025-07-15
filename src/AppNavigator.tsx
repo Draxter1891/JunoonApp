@@ -8,6 +8,7 @@ import AboutScreen from './screens/AboutScreen';
 import Partners from './screens/Partners';
 import GrievanceRedressal from './screens/Grievance';
 import ContactScreen from './screens/ContactScreen';
+import ProductNavigate from './Products/ProductNavigate';
 
 const { width } = Dimensions.get('window');
 const Drawer = createDrawerNavigator();
@@ -45,6 +46,7 @@ const AppNavigator = () => {
         <Drawer.Screen name="Partners" component={Partners} />
         <Drawer.Screen name="Grievance" component={GrievanceRedressal} />
         <Drawer.Screen name="Contact" component={ContactScreen} />
+        <Drawer.Screen name="Products" component={ProductNavigate} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
