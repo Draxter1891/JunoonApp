@@ -110,7 +110,7 @@ export const imageData: imageData[] = [
 ### Testable APK
 📱 **[Junoon.apk](https://drive.google.com/file/d/1vPmHSiWOqhBI6aqk8Vu_w2NlxTX5s7Bs/view?usp=sharing)**
 
-* Also you can download the app from /apk/googleDriveLink.txt
+* Also you can download the app from GitHub's Releases section.
 ---
 ### 📞 Contact
 

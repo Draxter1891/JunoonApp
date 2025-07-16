@@ -87,12 +87,6 @@ const Home = ({navigation}:any) => {
           <Text style={{fontSize:20,fontWeight:'bold',marginLeft:20,color:'#7E1900'}}>Go to Our Products</Text>
         </TouchableOpacity>
       </View>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          © 2025 Junoon Capital Services Pvt Ltd. All Rights Reserved.
-        </Text>
-      </View>
     </ScrollView>
   );
 };
@@ -148,7 +142,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    width: '100%',
+    width: '95%',
+    alignSelf:'center',
     backgroundColor: '#fff',
     borderRadius: 16,
     padding: 20,
@@ -200,19 +195,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 15,
     fontWeight: '500',
-    textAlign: 'center',
-  },
-  footer: {
-    marginTop: 20,
-    width: '100%',
-    borderTopWidth: 0.5,
-    borderColor: '#ddd',
-    paddingVertical: 12,
-    alignItems: 'center',
-  },
-  footerText: {
-    fontSize: 12,
-    color: '#999',
     textAlign: 'center',
   },
 });

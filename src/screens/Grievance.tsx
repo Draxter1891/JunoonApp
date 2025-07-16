@@ -116,10 +116,6 @@ const GrievanceRedressal = () => {
           ❗ If unresolved after 7 days at Level 2, approach RBI Ombudsman: https://cms.rbi.org.in
         </Text>
       </View>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>© 2025 Junoon Capital Services Pvt Ltd. All Rights Reserved.</Text>
-      </View>
     </ScrollView>
   );
 };
@@ -194,13 +190,4 @@ export const styles = StyleSheet.create({
   listItem: { flexDirection: 'row', alignItems: 'flex-start', gap: 6, marginBottom: 6 },
   table: { marginTop: 8 },
   tableRow: { marginBottom: 12 },
-  footer: {
-    marginTop: 20,
-    width: '100%',
-    borderTopWidth: 0.5,
-    borderColor: '#ddd',
-    paddingVertical: 12,
-    alignItems: 'center',
-  },
-  footerText: { fontSize: 12, color: '#999', textAlign: 'center' },
 });

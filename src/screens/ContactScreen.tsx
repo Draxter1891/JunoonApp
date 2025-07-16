@@ -20,7 +20,7 @@ const ContactScreen = () => {
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
     >
-      <Text style={styles.heading}>Contact Us</Text>
+      <Text style={styles.heading}>Contact us</Text>
 
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Get in Touch</Text>
@@ -49,7 +49,7 @@ const ContactScreen = () => {
         </Text>
       </View>
 
-      <Text style={styles.subHeading}>Grievance Redressal Officer</Text>
+      <Text style={styles.subHeading}>Grievance Redressal officer</Text>
       <View style={styles.card}>
         <Text style={styles.sectionSubtitle}>Mr. Sachin Kumar Srivastava</Text>
         <View style={styles.row}>
@@ -66,7 +66,7 @@ const ContactScreen = () => {
         </View>
       </View>
 
-      <Text style={styles.subHeading}>Arthmate Grievance Contact</Text>
+      <Text style={styles.subHeading}>Arthmate Grievance contact</Text>
       <View style={styles.card}>
         <Text style={styles.sectionSubtitle}>Ms. Deepika Rawat</Text>
         <View style={styles.row}>
@@ -108,11 +108,6 @@ const ContactScreen = () => {
           {showMap ? 'Hide Map' : 'Show Map'}
         </Text>
       </TouchableOpacity>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          © 2025 Junoon Capital Services Pvt Ltd. All Rights Reserved.
-        </Text>
-      </View>
     </ScrollView>
   );
 };
@@ -131,13 +126,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#7E1900',
     marginBottom: 20,
+    textTransform:'uppercase'
   },
   subHeading: {
     fontSize: 20,
     fontWeight: '600',
-    color: 'navy',
+    color: '#946060ff',
     marginTop: 20,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
+    textTransform:'uppercase'
   },
   card: {
     width: '100%',
@@ -184,6 +181,7 @@ const styles = StyleSheet.create({
   mapBtn: {
     flexDirection: 'row',
     marginTop: 50,
+    marginBottom:50,
     borderWidth: 1,
     borderRadius: 20,
     paddingVertical: 5,
@@ -192,13 +190,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#8c8d8f',
   },
-  footer: {
-    marginTop: 30,
-    width: '100%',
-    borderTopWidth: 0.5,
-    borderColor: '#ddd',
-    paddingVertical: 12,
-    alignItems: 'center',
-  },
-  footerText: { fontSize: 12, color: '#999', textAlign: 'center' },
 });

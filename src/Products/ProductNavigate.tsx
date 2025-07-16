@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const Index = ({navigation}:any) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.heroTitle}>Our Products</Text>
+      <Text style={styles.heroTitle}>Our products</Text>
       <View style={styles.row}>
         <Card icon="payments" title="Digital Loan" link="DigitalL" navigation={navigation}/>
         <Card icon="account-balance-wallet" title="Microfinance Loan" link="MicroL" navigation={navigation}/>
@@ -83,8 +83,9 @@ const styles = StyleSheet.create({
   heroTitle: {
     fontSize: 25,
     fontWeight: '700',
-    color: '#7E1900',
+    color: '#946060ff',
     textAlign: 'center',
+    textTransform:'uppercase'
   },
   title: {
     marginTop: 12,

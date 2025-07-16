@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Dimensions, Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { interpolate } from 'react-native-reanimated';
 import Carousel, { TAnimationStyle } from 'react-native-reanimated-carousel';
 import { width } from '../constants/Sizes';
@@ -9,9 +9,9 @@ const CustomCarousel = () => {
   const animationStyle: TAnimationStyle = useCallback((value: number) => {
     'worklet';
 
-    const zIndex = interpolate(value, [-1, 0, 1], [10, 20, 30]);
-    const scale = interpolate(value, [-1, 0, 1], [2, 1, 0.25]);
-    const opacity = interpolate(value, [-0.75, 0, 1], [0, 1, 0]);
+    const zIndex = interpolate(value, [-2, 0, 2], [10, 20, 30]);
+    const scale = interpolate(value, [-2, 0, 2], [2.5, 1, 0.4]);
+    const opacity = interpolate(value, [-1.5, 0, 2], [0, 1, 0]);
 
     return {
       transform: [{ scale }],
@@ -42,7 +42,7 @@ const CustomCarousel = () => {
       autoPlay
       width={width}
       height={200}
-      data={imageData}
+      data={imageData.slice(0,3)}
       renderItem={renderItem}
       customAnimation={animationStyle}
     />

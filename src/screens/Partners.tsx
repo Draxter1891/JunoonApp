@@ -4,16 +4,21 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const Partners = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
-      <Text style={styles.heading}>Our Lending Partner</Text>
+    <ScrollView
+      contentContainerStyle={styles.container}
+      showsVerticalScrollIndicator={false}
+    >
+      <Text style={styles.heading}>Our Lending partners</Text>
 
       <View style={styles.card}>
         <View style={styles.row}>
           <Icon name="checkmark-circle-outline" size={20} color="#7E1900" />
           <Text style={styles.description}>
-            Junoon Capital Services Private Limited is associated with notable institutional investors and lenders.
-            They assist in smooth operations by offering tailored products. Our partners help bring underserved
-            communities into formal banking by reducing dependency on unorganized lenders.
+            Junoon Capital Services Private Limited is associated with notable
+            institutional investors and lenders. They assist in smooth
+            operations by offering tailored products. Our partners help bring
+            underserved communities into formal banking by reducing dependency
+            on unorganized lenders.
           </Text>
         </View>
 
@@ -23,20 +28,33 @@ const Partners = () => {
         />
       </View>
 
-      <Text style={styles.subHeading}>Our Technical Partners</Text>
+      <Text style={styles.subHeading}>Our Technical partners</Text>
 
       <View style={styles.card}>
-        <Image source={{ uri: 'https://www.junooncapital.com/img/cibil.png' }} style={styles.img} />
-        <Image source={{ uri: 'https://www.crifhighmark.com/media/1674/crif-high-mark-logo.png' }} style={styles.img} />
-        <Image source={{ uri: 'https://www.junooncapital.com/img/equifax.png' }} style={styles.img} />
-        <Image source={{ uri: 'https://www.junooncapital.com/img/experian.png' }} style={styles.img} />
-        <Image source={{ uri: 'https://www.junooncapital.com/img/accredit_tech.jpeg' }} style={styles.img} />
-      </View>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          © 2025 Junoon Capital Services Pvt Ltd. All Rights Reserved.
-        </Text>
+        <Image
+          source={{ uri: 'https://www.junooncapital.com/img/cibil.png' }}
+          style={styles.img}
+        />
+        <Image
+          source={{
+            uri: 'https://www.crifhighmark.com/media/1674/crif-high-mark-logo.png',
+          }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://www.junooncapital.com/img/equifax.png' }}
+          style={styles.img}
+        />
+        <Image
+          source={{ uri: 'https://www.junooncapital.com/img/experian.png' }}
+          style={styles.img}
+        />
+        <Image
+          source={{
+            uri: 'https://www.junooncapital.com/img/accredit_tech.jpeg',
+          }}
+          style={styles.img}
+        />
       </View>
     </ScrollView>
   );
@@ -56,17 +74,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#7E1900',
     marginBottom: 20,
-    alignSelf:'flex-start'
+    alignSelf: 'center',
+    textTransform: 'uppercase',
   },
   subHeading: {
     fontSize: 20,
     fontWeight: '600',
-    color: 'navy',
+    color: '#946060ff',
     marginVertical: 20,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
+    textTransform: 'uppercase',
   },
   card: {
-    width: '100%',
+    width: '95%',
+    alignSelf: 'center',
     backgroundColor: '#fff',
     borderRadius: 16,
     padding: 16,

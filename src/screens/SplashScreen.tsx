@@ -15,15 +15,19 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
   const glowAnim = useRef(new Animated.Value(0)).current;
+  const translateAnim = useRef(new Animated.Value(0)).current;
+  const translateYAnim = useRef(new Animated.Value(0)).current;
+  const glowLoopRef = useRef<Animated.CompositeAnimation | null>(null);
   const bgAnim = useRef(new Animated.Value(0)).current;
 
   const bgColor = bgAnim.interpolate({
     inputRange: [0, 1],
-    outputRange: ['#c22563', '#ffffff'],
+    outputRange: ['#c22563', '#fefffe'],
   });
 
   useEffect(() => {
-    const glowLoop = Animated.loop(
+    // Pulse glow loop
+    glowLoopRef.current = Animated.loop(
       Animated.sequence([
         Animated.timing(glowAnim, {
           toValue: 1,
@@ -35,35 +39,40 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
           duration: 800,
           useNativeDriver: true,
         }),
-      ])
+      ]),
     );
+    glowLoopRef.current.start();
+    // Fade in text
+    Animated.timing(opacityAnim, {
+      toValue: 1,
+      duration: 400,
+      delay: 200,
+      useNativeDriver: true,
+    }).start();
 
-    glowLoop.start();
-
-    Animated.sequence([
-      Animated.timing(opacityAnim, {
-        toValue: 1,
-        duration: 1000,
+    // Zoom
+    setTimeout(() => {
+      glowLoopRef.current?.stop();
+      Animated.timing(glowAnim, {
+        toValue: 0,
+        duration: 200,
         useNativeDriver: true,
-      }),
-      Animated.delay(1500),
+      }).start();
+
       Animated.parallel([
         Animated.timing(scaleAnim, {
           toValue: 2,
-          duration: 800,
-          easing: Easing.inOut(Easing.exp),
+          duration: 500,
+          easing: Easing.out(Easing.exp),
           useNativeDriver: true,
         }),
         Animated.timing(bgAnim, {
           toValue: 1,
-          duration: 800,
+          duration: 500,
           useNativeDriver: false,
         }),
-      ]),
-    ]).start(() => {
-      glowLoop.stop();
-      onFinish();
-    });
+      ]).start(() => onFinish());
+    }, 600);
   }, []);
 
   return (
@@ -89,6 +98,7 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
           styles.logoContainer,
           {
             transform: [{ scale: scaleAnim }],
+            borderRadius: 100,
           },
         ]}
       >
@@ -111,10 +121,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoContainer: {
-    backgroundColor: '#f3e4ea',
+    backgroundColor: '#f3e4eaff',
     height: 200,
     width: 200,
-    borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
   },

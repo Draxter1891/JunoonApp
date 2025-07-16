@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   callButton: {
     flexDirection: 'row',
-    backgroundColor: '#7E1900',
+    backgroundColor: '#037ffc',
     padding: 14,
     borderRadius: 12,
     alignItems: 'center',
